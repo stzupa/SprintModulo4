@@ -37,12 +37,10 @@ public class Main {
                     case 2:
                         validaProfesional();
                         sc.nextLine();
-                        //System.out.println("almacenar pro");
                         break;
                     case 3:
                         validaAdministrativo();
                         sc.nextLine();
-                        //System.out.println("almacenar admin");
                         break;
                     case 4:
                         System.out.println("almacenar cap");
@@ -52,6 +50,7 @@ public class Main {
                         break;
                     case 6:
                         contenedor.listarUsuarios();
+                        sc.nextLine();
                         break;
                     case 7:
                         System.out.println("listar user x tipo");
