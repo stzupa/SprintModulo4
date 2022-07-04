@@ -49,6 +49,9 @@ public class Profesional extends Usuario{
      */
     @Override
     public void analizarUsuario() {
+
         super.analizarUsuario();
+        System.out.println("Título: " + getTitulo() + ", fecha de ingreso: " + getFechaIngreso());
+
     }
 }

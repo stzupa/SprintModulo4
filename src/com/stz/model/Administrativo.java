@@ -42,4 +42,13 @@ public class Administrativo extends Usuario{
                 ", experiencia='" + experiencia + '\'' +
                 '}';
     }
+
+    /**
+     * despliegue el nombre y el RUN de la clase padre y atributos de la clase
+     */
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+        System.out.println("Area: " + getArea() + ", experiencia: " + getExperiencia());
+    }
 }

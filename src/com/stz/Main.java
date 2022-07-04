@@ -51,7 +51,7 @@ public class Main {
                         System.out.println("eliminar user");
                         break;
                     case 6:
-                        System.out.println("listar user");
+                        contenedor.listarUsuarios();
                         break;
                     case 7:
                         System.out.println("listar user x tipo");
@@ -208,6 +208,8 @@ public class Main {
         salir = false;
 
         fechaIngreso = validaFechas(fechaIngreso);
+
+        contenedor.almacenarProfesional(nombreUser, run, fechaNac, titulo, fechaIngreso);
 
 
 

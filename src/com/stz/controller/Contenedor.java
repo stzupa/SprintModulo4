@@ -3,6 +3,7 @@ package com.stz.controller;
 import com.stz.model.Capacitacion;
 import com.stz.model.Cliente;
 import com.stz.model.IAsesoria;
+import com.stz.model.Profesional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,6 @@ public class Contenedor {
                                  String direccion, String comuna, int edad){
 
         asesorias.add(new Cliente(rut,nombre,apellido,telefono,afp,sistSalud,direccion,comuna,edad));
-        System.out.println("almacenar cliente");
 
         for (IAsesoria ia: asesorias) {
             ia.analizarUsuario();
@@ -42,7 +42,9 @@ public class Contenedor {
     /**
      * permite agregar un nuevo profesional a la lista de instancias de la interface Asesoria
      */
-    public void almacenarProfesional(){
+    public void almacenarProfesional(String nombreUser, int run, String fechaNac, String titulo, String fechaIng){
+
+        asesorias.add(new Profesional(nombreUser, fechaNac, run, titulo, fechaIng));
 
     }
 
@@ -50,6 +52,8 @@ public class Contenedor {
      * permite agregar un nuevo administrativo a la lista de instancias de la interface Asesoria
      */
     public void almacenarAdministrativo(){
+
+
 
     }
 
@@ -72,6 +76,12 @@ public class Contenedor {
      * desplegar los datos de la clase usuario
      */
     public void listarUsuarios(){
+
+        for (IAsesoria ia: asesorias) {
+
+            ia.analizarUsuario();
+
+        }
 
     }
 
