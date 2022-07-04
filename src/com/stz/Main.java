@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         do {
-            System.out.println("sca una opción:\n"+
+            System.out.println("Selecciona una opción:\n"+
                     "1.-    Almacenar Cliente\n"+
                     "2.-    Almacenar Profesional\n"+
                     "3.-    Almacenar Administrativo\n"+
@@ -225,17 +225,6 @@ public class Main {
 
         nombreUser = validaNombreUser();
 
-        /*do {
-            System.out.println("Nombre usuario:");
-            nombreUser = sc.nextLine();
-            if (nombreUser.matches("[\\D\\d]{10,50}")){
-                salir = true;
-            }else {
-                System.out.println("10 a 50 caracteres");
-            }
-        }while (!salir);
-        salir = false;*/
-
         fechaNacUser = "nacimiento";
         fechaNacUser = validaFechas(fechaNacUser);
 
@@ -262,8 +251,6 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
-
     }
 
 
