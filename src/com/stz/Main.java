@@ -211,25 +211,18 @@ public class Main {
 
         contenedor.almacenarProfesional(nombreUser, run, fechaNac, titulo, fechaIngreso);
 
-
-
-
     }
 
     public static void validaAdministrativo(){
 
         String area;
         String exPrevia;
-
         String nombreUser;
-        String fechaNacUser;
+        String fechaNacUser = "nacimiento";
         int runUser;
 
         nombreUser = validaNombreUser();
-
-        fechaNacUser = "nacimiento";
         fechaNacUser = validaFechas(fechaNacUser);
-
         runUser = validaRut();
 
         do {
@@ -246,13 +239,17 @@ public class Main {
         do {
             System.out.println("Experiencia previa:");
             exPrevia = sc.nextLine();
-            if (exPrevia.matches("^[A-Za-z\\s\\d]{1,100}$")){
+            if (exPrevia.matches("^[A-Za-z\\s\\d]{10,100}$")){
                 salir = true;
             }else {
                 System.out.println("Letras y numeros, máximo 100 caracteres");
             }
         }while (!salir);
         salir = false;
+
+        contenedor.almacenarAdministrativo(nombreUser, fechaNacUser, runUser, area, exPrevia);
+
+
     }
 
 

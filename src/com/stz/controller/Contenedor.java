@@ -1,13 +1,9 @@
 package com.stz.controller;
 
-import com.stz.model.Capacitacion;
-import com.stz.model.Cliente;
-import com.stz.model.IAsesoria;
-import com.stz.model.Profesional;
+import com.stz.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * com.stz.controller
@@ -51,9 +47,9 @@ public class Contenedor {
     /**
      * permite agregar un nuevo administrativo a la lista de instancias de la interface Asesoria
      */
-    public void almacenarAdministrativo(){
+    public void almacenarAdministrativo(String nombreUser, String fecha, int run, String area, String exPre){
 
-
+        asesorias.add(new Administrativo(nombreUser, fecha, run, area, exPre));
 
     }
 
