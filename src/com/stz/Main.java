@@ -181,23 +181,34 @@ public class Main {
 
     }
 
+    /**
+     * Valida datos del prosefional
+     */
     public static void validaProfesional(){
 
         String titulo;
-        String fechaIngreso;
+        String fechaIngreso = "ingreso";
+        String nombreUser;
+        int run;
+        String fechaNac = "nacimiento";
+
+        nombreUser = validaNombreUser();
+        run = validaRut();
+        fechaNac = validaFechas(fechaNac);
 
         do {
             System.out.println("Título:");
             titulo = sc.nextLine();
-            if (titulo.matches("\\D{10,50}")){
+            if (titulo.matches("^[A-Za-z\\s]{10,50}$")){
                 salir = true;
             }else {
                 System.out.println("Solo texto. 10 a 50 caracteres");
             }
         }while (!salir);
         salir = false;
-        fechaIngreso = "ingreso";
+
         fechaIngreso = validaFechas(fechaIngreso);
+
 
 
 
@@ -212,7 +223,9 @@ public class Main {
         String fechaNacUser;
         int runUser;
 
-        do {
+        nombreUser = validaNombreUser();
+
+        /*do {
             System.out.println("Nombre usuario:");
             nombreUser = sc.nextLine();
             if (nombreUser.matches("[\\D\\d]{10,50}")){
@@ -221,7 +234,7 @@ public class Main {
                 System.out.println("10 a 50 caracteres");
             }
         }while (!salir);
-        salir = false;
+        salir = false;*/
 
         fechaNacUser = "nacimiento";
         fechaNacUser = validaFechas(fechaNacUser);
@@ -231,7 +244,7 @@ public class Main {
         do {
             System.out.println("Area:");
             area = sc.nextLine();
-            if (area.matches("\\D{5,20}")){
+            if (area.matches("^[A-Za-z\\s]{5,20}$")){
                 salir = true;
             }else {
                 System.out.println("Solo texto. 5 a 20 caracteres");
@@ -242,10 +255,10 @@ public class Main {
         do {
             System.out.println("Experiencia previa:");
             exPrevia = sc.nextLine();
-            if (exPrevia.matches("[\\d\\D]{100}")){
+            if (exPrevia.matches("^[A-Za-z\\s\\d]{1,100}$")){
                 salir = true;
             }else {
-                System.out.println("Máximo 100 caracteres");
+                System.out.println("Letras y numeros, máximo 100 caracteres");
             }
         }while (!salir);
         salir = false;
@@ -261,19 +274,23 @@ public class Main {
     public static int validaRut(){
 
         int run = 0;
+        String cadena;
 
         do {
             System.out.println("Ingresa RUN:");
-            try{
-                run = Integer.parseInt(sc.nextLine());
-                if (run > 99999999){
-                    System.out.println("Supera rango");
-                }else {
+            cadena = sc.nextLine();
+
+            if (cadena.matches("[0-9]{7,8}")){
+                try{
+                    run =Integer.parseInt(cadena);
                     salir = true;
+                }catch (NumberFormatException e){
+                    System.out.println("Solo números");
                 }
-            }catch (NumberFormatException e){
-                System.out.println("Solo números");
+            }else {
+                System.out.println("Rango 9.999.999 a 99.999.999");
             }
+
         }while (!salir);
         salir = false;
 
@@ -305,7 +322,7 @@ public class Main {
     }
 
     /**
-     * Valiada el nombre del usuario
+     * Valida el nombre del usuario
      * @return String usuario
      */
     public static String validaNombreUser(){
@@ -315,7 +332,7 @@ public class Main {
         do {
             System.out.println("Nombre de Usuario:");
             nombre = sc.nextLine();
-            if (nombre.matches("\\D{10,50}")){
+            if (nombre.matches("^[A-Za-z\\s\\d]{10,50}$")){
                 salir = true;
             }else {
                 System.out.println("Solo letras, 10 a 50 caracteres");
