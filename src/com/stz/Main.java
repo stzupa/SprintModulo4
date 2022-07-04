@@ -127,7 +127,6 @@ public class Main {
         salir = false;
 
         do {
-
             System.out.println("Sistema de Salud:\n"+
                     "1.-    Fonasa\n"+
                     "2.-    Isapre");
@@ -200,16 +199,7 @@ public class Main {
         fechaIngreso = "ingreso";
         fechaIngreso = validaFechas(fechaIngreso);
 
-        /*do {
-            System.out.println("Fecha de ingreso:");
-            fechaIngreso = sc.nextLine();
-            if (fechaIngreso.matches("(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}")){
-                salir = true;
-            }else {
-                System.out.println("Formatao de ser dd/mm/aaaa");
-            }
-        }while (!salir);
-        salir = false;*/
+
 
     }
 
@@ -312,6 +302,28 @@ public class Main {
 
         return fecha;
 
+    }
+
+    /**
+     * Valiada el nombre del usuario
+     * @return String usuario
+     */
+    public static String validaNombreUser(){
+
+        String nombre;
+
+        do {
+            System.out.println("Nombre de Usuario:");
+            nombre = sc.nextLine();
+            if (nombre.matches("\\D{10,50}")){
+                salir = true;
+            }else {
+                System.out.println("Solo letras, 10 a 50 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+
+        return nombre;
     }
 
 }
