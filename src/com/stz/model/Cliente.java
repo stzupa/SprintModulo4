@@ -145,7 +145,13 @@ public class Cliente extends Usuario{
      * de acuerdo al valor registrado en el objeto despliega el tipo de sistema de salud
      */
     public void obtenerSistemaSalud(){
-
+        if (sistemaSalud==1) {
+            System.out.println("Fonasa");
+        } else if (sistemaSalud==2) {
+            System.out.println("Isapre");
+        }else{
+            System.out.println("invalido");
+        }
     }
 
     /**

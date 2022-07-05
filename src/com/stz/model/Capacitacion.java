@@ -104,6 +104,6 @@ public class Capacitacion {
      */
     public String mostrarDetalle(){
 
-        return "";
+        return ("La capacitación será en "+lugar+" a las "+hora+" del día "+ dia+", y dura "+duracion+" minutos");
     }
 }
