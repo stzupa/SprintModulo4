@@ -338,13 +338,8 @@ public class Main {
         return nombre;
     }
 
-    /**
-     * Valida datos de capacitaciones
-     */
-
-    public static void validaCapacitacion(){
-        int id=0, rut, asistentes=0;
-        String dia, hora, lugar, duracion;
+    public static int validarID(){
+        int id=0;
         do {
             System.out.println("Identificador:");
             try {
@@ -355,9 +350,50 @@ public class Main {
             }catch (NumberFormatException e){
                 System.out.println("Solo números");
             }
+
         }while (!salir);
         salir = false;
+        return id;
+    }
 
+    public static String validarHora(){
+        String hora;
+        do {
+            System.out.println("Hora (HH:MM): ");
+            hora = sc.nextLine();
+            if (hora.matches("([01]?[0-9]|2[0-3]):[0-5][0-9]")){
+                salir = true;
+            }else {
+                System.out.println("Formato debe ser HH:MM");
+            }
+        }while (!salir);
+        salir = false;
+        return hora;
+    }
+
+    public static String validarLugar(){
+        String lugar;
+        do {
+            System.out.println("Lugar:");
+            lugar = sc.nextLine();
+            if (lugar.matches("^[A-Za-z\\s\\d]{10,50}$")){
+                salir = true;
+            }else {
+                System.out.println("Solo letras, 10 a 50 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+        return lugar;
+    }
+    /**
+     * Valida datos de capacitaciones
+     */
+
+    public static void validaCapacitacion(){
+        int id,rut, asistentes=0;
+        String dia, hora, lugar, duracion;
+
+        id= validarID();
         rut= validaRut();
 
         do {
@@ -374,27 +410,8 @@ public class Main {
         }while (!salir);
         salir = false;
 
-        do {
-            System.out.println("Hora (HH:MM): ");
-            hora = sc.nextLine();
-            if (hora.matches("([01]?[0-9]|2[0-3]):[0-5][0-9]")){
-                salir = true;
-            }else {
-                System.out.println("Formato debe ser HH:MM");
-            }
-        }while (!salir);
-        salir = false;
-
-        do {
-            System.out.println("Lugar Capacitación:");
-            lugar = sc.nextLine();
-            if (lugar.matches("^[A-Za-z\\s\\d]{10,50}$")){
-                salir = true;
-            }else {
-                System.out.println("Solo letras, 10 a 50 caracteres");
-            }
-        }while (!salir);
-        salir = false;
+        hora= validarHora();
+        lugar = validarLugar();
 
         do {
             System.out.println("Duración Capacitación:");
@@ -458,5 +475,101 @@ public class Main {
 
     }
 
+    /**
+     * Validar datos de Accidente
+     */
+    public static void ValidarAccidente(){
+        int id,rut;
+        String dia, hora, lugar, origen, consecuencia, cadena="accidente";
 
+        id=validarID();
+        rut=validaRut();
+        dia =validaFechas(cadena);
+        hora=validarHora();
+        lugar=validarLugar();
+
+        do {
+            System.out.println("Origen del Accidente:");
+            origen = sc.nextLine();
+            if (origen.length()<=100){
+                salir = true;
+            }else {
+                System.out.println("máximo 100 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Consecuencia del Accidente:");
+            consecuencia = sc.nextLine();
+            if (consecuencia.length()<=100){
+                salir = true;
+            }else {
+                System.out.println("máximo 100 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+    }
+
+    /**
+     * Validar datos de Visita en Terreno
+     */
+    public static void ValidarVisitaEnTerreno() {
+        int id, rut;
+        String dia, hora, lugar, comentario, cadena = "Visita en terreno";
+
+        id = validarID();
+        rut = validaRut();
+        dia = validaFechas(cadena);
+        hora = validarHora();
+
+        do {
+            System.out.println("Comentario:");
+            comentario = sc.nextLine();
+            if (comentario.length() <= 100) {
+                salir = true;
+            } else {
+                System.out.println("máximo 100 caracteres");
+            }
+        } while (!salir);
+        salir = false;
+    }
+
+    /**
+     * Validar datos de Revisión
+     */
+    public static void ValidarRevision(){
+        int idRevision, idVisita, estado=0;
+        String nombre;
+
+        idRevision = validarID();
+        idVisita = validarID();
+
+        do {
+            System.out.println("Nombre revisión:");
+            nombre = sc.nextLine();
+            if (nombre.matches("^[A-Za-z\\s\\d]{10,50}$")){
+                salir = true;
+            }else {
+                System.out.println("Solo letras, 10 a 50 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Ingrese el estado : \n" +
+                    "1.- Sin problema \n" +
+                    "2.- Con Observaciones \n"+
+                    "3.- No Aprueba \n");
+            try {
+                estado = Integer.parseInt(sc.nextLine());
+                if (estado ==1 || estado==2 || estado == 3){
+                    salir = true;
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Debe ingresar solo la opción correspondiente 1,2 o 3");
+            }
+        }while (!salir);
+
+    }
 }
