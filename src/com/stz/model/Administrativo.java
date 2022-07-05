@@ -49,9 +49,10 @@ public class Administrativo extends Usuario{
      * despliegue el nombre y el RUN de la clase padre y atributos de la clase
      */
     @Override
-    public void analizarUsuario() {
+    public int analizarUsuario() {
         super.analizarUsuario();
         System.out.println("Area: " + getArea() + ", experiencia: " + getExperiencia());
+        return getRun();
     }
 
 
