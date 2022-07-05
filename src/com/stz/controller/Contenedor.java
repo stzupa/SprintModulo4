@@ -65,6 +65,8 @@ public class Contenedor {
      */
     public void eliminarUsuario(int rut){
 
+        // TODO falta desarrollo eliminar usuario
+
     }
 
     /**
@@ -85,7 +87,13 @@ public class Contenedor {
      * recibe un tipo de usuario (cliente, administrador o profesional), y retorna los datos respectivos según
      * el tipo de usuario
      */
-    public void listarUsuariosPorTipo(){
+    public void listarUsuariosPorTipo(int opcion){
+
+
+
+
+
+        //TODO falta desarrollo listar por tipo
 
     }
 

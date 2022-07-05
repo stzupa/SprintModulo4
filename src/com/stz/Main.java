@@ -1,6 +1,9 @@
 package com.stz;
 
 import com.stz.controller.Contenedor;
+import com.stz.model.Administrativo;
+import com.stz.model.Cliente;
+import com.stz.model.Profesional;
 import com.stz.model.Usuario;
 
 import java.util.Scanner;
@@ -55,6 +58,7 @@ public class Main {
                         break;
                     case 7:
                         System.out.println("listar user x tipo");
+                        usuarioPorTipo();
                         break;
                     case 8:
                         contenedor.listarCapacitaciones();
@@ -416,6 +420,44 @@ public class Main {
         }while (!salir);
         salir = false;
         contenedor.almacenarCapacitacion(id,rut,dia,hora,lugar,duracion,asistentes);
+    }
+
+    public static void usuarioPorTipo(){
+
+        do {
+
+            System.out.println("Tipo de Usuario\n"+
+                    "1.-    Cliente\n" +
+                    "2.-    Profesional\n" +
+                    "3.-    Administrativo\n" +
+                    "4.-    Volver");
+
+
+            opcion = Integer.parseInt(sc.nextLine());
+
+            switch (opcion){
+                case 1:
+                    System.out.println("Cliente");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 2:
+                    System.out.println("Profesioanal");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 3:
+                    System.out.println("Administrativo");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 4:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción incorrecta");
+            }
+
+        }while (!salir);
+        salir = false;
+
     }
 
 }

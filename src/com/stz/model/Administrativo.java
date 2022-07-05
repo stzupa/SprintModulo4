@@ -1,5 +1,7 @@
 package com.stz.model;
 
+import java.util.List;
+
 /**
  * com.stz.model
  *
@@ -51,4 +53,6 @@ public class Administrativo extends Usuario{
         super.analizarUsuario();
         System.out.println("Area: " + getArea() + ", experiencia: " + getExperiencia());
     }
+
+
 }
