@@ -54,16 +54,17 @@ public class Contenedor {
     }
 
     /**
-     * permite agregar una nueva capacitación a la lista de instancias de la clase Capacitación
+     * permite agregar una nueva capacitaciÃ³n a la lista de instancias de la clase CapacitaciÃ³n
      */
     public void almacenarCapacitacion(int id, int rut, String dia, String hora, String lugar, String duracion, int nAsistente){
         capacitaciones.add(new Capacitacion(id,rut,dia, hora, lugar, duracion, nAsistente));
     }
 
     /**
-     * permite eliminar un usuario desde la lista de interfaces de Asesoría acuerdo con el RUN del usuario
+     * permite eliminar un usuario desde la lista de interfaces de AsesorÃ­a acuerdo con el RUN del usuario
      */
     public void eliminarUsuario(int rut){
+
         int i =0;
         boolean encontrado=false;
         do{
@@ -74,10 +75,15 @@ public class Contenedor {
             }
             i++;
         }while (encontrado==false);
+
+
+        // TODO falta desarrollo eliminar usuario
+
+
     }
 
     /**
-     * permite desplegar la lista completa de usuarios, independiente del tipo. En este método solo se deben
+     * permite desplegar la lista completa de usuarios, independiente del tipo. En este mÃ©todo solo se deben
      * desplegar los datos de la clase usuario
      */
     public void listarUsuarios(){
@@ -91,16 +97,22 @@ public class Contenedor {
     }
 
     /**
-     * recibe un tipo de usuario (cliente, administrador o profesional), y retorna los datos respectivos según
+     * recibe un tipo de usuario (cliente, administrador o profesional), y retorna los datos respectivos segÃºn
      * el tipo de usuario
      */
-    public void listarUsuariosPorTipo(){
+    public void listarUsuariosPorTipo(int opcion){
+
+
+
+
+
+        //TODO falta desarrollo listar por tipo
 
     }
 
     /**
-     * este método despliega las capacitaciones registradas en la lista respectiva, junto con los datos del
-     * cliente al que está asociada dicha capacitación
+     * este mÃ©todo despliega las capacitaciones registradas en la lista respectiva, junto con los datos del
+     * cliente al que estÃ¡ asociada dicha capacitaciÃ³n
      */
     public void listarCapacitaciones(){
         for (Capacitacion cap: capacitaciones) {

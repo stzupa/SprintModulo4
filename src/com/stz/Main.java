@@ -1,6 +1,9 @@
 package com.stz;
 
 import com.stz.controller.Contenedor;
+import com.stz.model.Administrativo;
+import com.stz.model.Cliente;
+import com.stz.model.Profesional;
 import com.stz.model.Usuario;
 
 import java.util.Scanner;
@@ -15,11 +18,11 @@ public class Main {
     public static void main(String[] args) {
 
         do {
-            System.out.println("Selecciona una opci髇:\n"+
+            System.out.println("Selecciona una opci贸n:\n"+
                     "1.-    Almacenar Cliente\n"+
                     "2.-    Almacenar Profesional\n"+
                     "3.-    Almacenar Administrativo\n"+
-                    "4.-    Almacenar Capacitaci髇\n"+
+                    "4.-    Almacenar Capacitaci贸n\n"+
                     "5.-    Eliminar Usuario\n"+
                     "6.-    Listar Usuarios\n"+
                     "7.-    Listar Usuarios Por Tipo\n"+
@@ -58,6 +61,7 @@ public class Main {
                         break;
                     case 7:
                         System.out.println("listar user x tipo");
+                        usuarioPorTipo();
                         break;
                     case 8:
                         contenedor.listarCapacitaciones();
@@ -66,10 +70,10 @@ public class Main {
                         salir = true;
                         break;
                     default:
-                        System.out.println("Opci髇 incorrecta");
+                        System.out.println("Opci贸n incorrecta");
                 }
             }catch (NumberFormatException e){
-                System.out.println("Solo n鷐eros");
+                System.out.println("Solo n煤meros");
             }
         }while (!salir);
     }
@@ -113,7 +117,7 @@ public class Main {
         salir = false;
 
         do {
-            System.out.println("Tel閒ono Cliente");
+            System.out.println("Tel茅fono Cliente");
             telefono = sc.nextLine();
             if (telefono.matches("\\D*([+56]\\d[2-9])(\\d{4})(\\d{4})\\D*")){
                 salir = true;
@@ -143,7 +147,7 @@ public class Main {
                 sistSalud = Integer.parseInt(sc.nextLine());
                 if (sistSalud == 1 || sistSalud == 2){
                     salir = true;
-                }else System.out.println("Opci髇 incorrecta");
+                }else System.out.println("Opci贸n incorrecta");
             }catch (NumberFormatException e){
                 System.out.println("1 o 2");
             }
@@ -152,7 +156,7 @@ public class Main {
 
 
         do {
-            System.out.println("Direcci髇 Cliente:");
+            System.out.println("Direcci贸n Cliente:");
             direccion = sc.nextLine();
             if (direccion.matches("[\\D\\d]{1,70}")){
                 salir = true;
@@ -181,7 +185,7 @@ public class Main {
                     salir = true;
                 }
             }catch (NumberFormatException e){
-                System.out.println("Solo n鷐eros");
+                System.out.println("Solo n煤meros");
             }
 
         }while (!salir);
@@ -208,7 +212,7 @@ public class Main {
         fechaNac = validaFechas(fechaNac);
 
         do {
-            System.out.println("T韙ulo:");
+            System.out.println("T铆tulo:");
             titulo = sc.nextLine();
             if (titulo.matches("^[A-Za-z\\s]{10,50}$")){
                 salir = true;
@@ -253,7 +257,7 @@ public class Main {
             if (exPrevia.matches("^[A-Za-z\\s\\d\\D]{10,100}$")){
                 salir = true;
             }else {
-                System.out.println("Letras y numeros, m醲imo 100 caracteres");
+                System.out.println("Letras y numeros, m谩ximo 100 caracteres");
             }
         }while (!salir);
         salir = false;
@@ -280,7 +284,7 @@ public class Main {
                     run =Integer.parseInt(cadena);
                     salir = true;
                 }catch (NumberFormatException e){
-                    System.out.println("Solo n鷐eros");
+                    System.out.println("Solo n煤meros");
                 }
             }else {
                 System.out.println("Rango 9.999.999 a 99.999.999");
@@ -353,7 +357,7 @@ public class Main {
                     salir = true;
                 }
             }catch (NumberFormatException e){
-                System.out.println("Solo n鷐eros");
+                System.out.println("Solo n煤meros");
             }
         }while (!salir);
         salir = false;
@@ -361,7 +365,7 @@ public class Main {
         rut= validaRut();
 
         do {
-            System.out.println("D韆:");
+            System.out.println("D铆a:");
             dia = sc.nextLine();
             if(dia.equalsIgnoreCase("Lunes")||dia.equalsIgnoreCase("Martes")
             ||dia.equalsIgnoreCase("Miercoles")||dia.equalsIgnoreCase("Jueves")
@@ -369,7 +373,7 @@ public class Main {
             ||dia.equalsIgnoreCase("Domingo")){
                 salir=true;
             } else {
-                System.out.println("El d韆 ingresado no es v醠ido");
+                System.out.println("El d铆a ingresado no es v谩lido");
             }
         }while (!salir);
         salir = false;
@@ -386,7 +390,7 @@ public class Main {
         salir = false;
 
         do {
-            System.out.println("Lugar Capacitaci髇:");
+            System.out.println("Lugar Capacitaci贸n:");
             lugar = sc.nextLine();
             if (lugar.matches("^[A-Za-z\\s\\d]{10,50}$")){
                 salir = true;
@@ -397,12 +401,12 @@ public class Main {
         salir = false;
 
         do {
-            System.out.println("Duraci髇 Capacitaci髇:");
+            System.out.println("Duraci贸n Capacitaci贸n:");
             duracion = sc.nextLine();
             if (duracion.length()<=70){
                 salir = true;
             }else {
-                System.out.println("m醲imo 70 caracteres");
+                System.out.println("m谩ximo 70 caracteres");
             }
         }while (!salir);
         salir = false;
@@ -415,11 +419,50 @@ public class Main {
                     salir = true;
                 }
             }catch (NumberFormatException e){
-                System.out.println("Solo n鷐eros");
+                System.out.println("Solo n煤meros");
             }
         }while (!salir);
         salir = false;
         contenedor.almacenarCapacitacion(id,rut,dia,hora,lugar,duracion,asistentes);
+    }
+
+
+    public static void usuarioPorTipo(){
+
+        do {
+
+            System.out.println("Tipo de Usuario\n"+
+                    "1.-    Cliente\n" +
+                    "2.-    Profesional\n" +
+                    "3.-    Administrativo\n" +
+                    "4.-    Volver");
+
+
+            opcion = Integer.parseInt(sc.nextLine());
+
+            switch (opcion){
+                case 1:
+                    System.out.println("Cliente");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 2:
+                    System.out.println("Profesioanal");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 3:
+                    System.out.println("Administrativo");
+                    contenedor.listarUsuariosPorTipo(opcion);
+                    break;
+                case 4:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opci贸n incorrecta");
+            }
+
+        }while (!salir);
+        salir = false;
+
     }
 
 

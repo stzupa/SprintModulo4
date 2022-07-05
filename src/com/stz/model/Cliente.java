@@ -1,5 +1,7 @@
 package com.stz.model;
 
+import java.util.List;
+
 /**
  * com.stz.model
  *
@@ -164,4 +166,6 @@ public class Cliente extends Usuario{
         System.out.println("Dirección: " + getDireccion() + ", Comuna: " + getComuna());
         return getRut();
     }
+
+
 }
