@@ -44,6 +44,7 @@ public class Main {
                         break;
                     case 4:
                         validaCapacitacion();
+                        sc.nextLine();
                         break;
                     case 5:
                         System.out.println("ingrese rut del usuario a eliminar");
@@ -56,11 +57,12 @@ public class Main {
                         sc.nextLine();
                         break;
                     case 7:
-                        System.out.println("listar user x tipo");
                         usuarioPorTipo();
+                        sc.nextLine();
                         break;
                     case 8:
                         contenedor.listarCapacitaciones();
+                        sc.nextLine();
                         break;
                     case 9:
                         salir = true;

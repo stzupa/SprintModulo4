@@ -102,8 +102,8 @@ public class Capacitacion {
      * en donde A es el lugar, B es la hora, C es el día y D son los minutos
      * @return String
      */
-    public String mostrarDetalle(){
+    public void mostrarDetalle(){
 
-        return ("La capacitación será en "+lugar+" a las "+hora+" del día "+ dia+", y dura "+duracion+" minutos");
+        System.out.println("La capacitación será en "+lugar+" a las "+hora+" del día "+ dia+", y dura "+duracion+" minutos");
     }
 }
