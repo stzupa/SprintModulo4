@@ -56,14 +56,14 @@ public class Contenedor {
     /**
      * permite agregar una nueva capacitación a la lista de instancias de la clase Capacitación
      */
-    public void almacenarCapacitacion(){
-
+    public void almacenarCapacitacion(int id, int rut, String dia, String hora, String lugar, String duracion, int nAsistente){
+        capacitaciones.add(new Capacitacion(id,rut,dia, hora, lugar, duracion, nAsistente));
     }
 
     /**
      * permite eliminar un usuario desde la lista de interfaces de Asesoría acuerdo con el RUN del usuario
      */
-    public void eliminarUsuario(){
+    public void eliminarUsuario(int rut){
 
     }
 
@@ -94,6 +94,10 @@ public class Contenedor {
      * cliente al que está asociada dicha capacitación
      */
     public void listarCapacitaciones(){
+        for (Capacitacion cap: capacitaciones) {
 
+            cap.mostrarDetalle();
+
+        }
     }
 }

@@ -44,7 +44,7 @@ public class Main {
                         sc.nextLine();
                         break;
                     case 4:
-                        System.out.println("almacenar cap");
+                        validaCapacitacion();
                         break;
                     case 5:
                         System.out.println("eliminar user");
@@ -57,7 +57,7 @@ public class Main {
                         System.out.println("listar user x tipo");
                         break;
                     case 8:
-                        System.out.println("listar cap");
+                        contenedor.listarCapacitaciones();
                         break;
                     case 9:
                         salir = true;
@@ -332,6 +332,90 @@ public class Main {
         salir = false;
 
         return nombre;
+    }
+
+    /**
+     * Valida datos de capacitaciones
+     */
+
+    public static void validaCapacitacion(){
+        int id=0, rut, asistentes=0;
+        String dia, hora, lugar, duracion;
+        do {
+            System.out.println("Identificador:");
+            try {
+                id = Integer.parseInt(sc.nextLine());
+                if (id > 0){
+                    salir = true;
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Solo números");
+            }
+        }while (!salir);
+        salir = false;
+
+        rut= validaRut();
+
+        do {
+            System.out.println("Día:");
+            dia = sc.nextLine();
+            if(dia.equalsIgnoreCase("Lunes")||dia.equalsIgnoreCase("Martes")
+            ||dia.equalsIgnoreCase("Miercoles")||dia.equalsIgnoreCase("Jueves")
+            ||dia.equalsIgnoreCase("Viernes")||dia.equalsIgnoreCase("Sabado")
+            ||dia.equalsIgnoreCase("Domingo")){
+                salir=true;
+            } else {
+                System.out.println("El día ingresado no es válido");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Hora (HH:MM): ");
+            hora = sc.nextLine();
+            if (hora.matches("([01]?[0-9]|2[0-3]):[0-5][0-9]")){
+                salir = true;
+            }else {
+                System.out.println("Formato debe ser HH:MM");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Lugar Capacitación:");
+            lugar = sc.nextLine();
+            if (lugar.matches("^[A-Za-z\\s\\d]{10,50}$")){
+                salir = true;
+            }else {
+                System.out.println("Solo letras, 10 a 50 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Duración Capacitación:");
+            duracion = sc.nextLine();
+            if (duracion.length()<=70){
+                salir = true;
+            }else {
+                System.out.println("máximo 70 caracteres");
+            }
+        }while (!salir);
+        salir = false;
+
+        do {
+            System.out.println("Cantidad de Asistentes:");
+            try {
+                asistentes = Integer.parseInt(sc.nextLine());
+                if (asistentes > 0 && asistentes<=1000){
+                    salir = true;
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Solo números");
+            }
+        }while (!salir);
+        salir = false;
+        contenedor.almacenarCapacitacion(id,rut,dia,hora,lugar,duracion,asistentes);
     }
 
 }
