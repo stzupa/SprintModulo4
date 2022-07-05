@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * com.stz.controller
  *
- * @author Sergio Teran on 01-07-2022
+ * @author Sergio Teran, Fabiola Díaz on 05-07-2022
  */
 public class Contenedor {
 

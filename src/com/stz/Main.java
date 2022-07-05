@@ -1,5 +1,9 @@
 package com.stz;
-
+/**
+ * com.stz.model
+ *
+ * @author Sergio Teran, Fabiola Díaz on 05-07-2022
+ */
 import com.stz.controller.Contenedor;
 
 import java.util.Scanner;
