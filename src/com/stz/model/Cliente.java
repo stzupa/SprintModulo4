@@ -161,9 +161,10 @@ public class Cliente extends Usuario{
      * la dirección del cliente junto con la comuna
      */
     @Override
-    public void analizarUsuario() {
+    public int analizarUsuario() {
         super.analizarUsuario();
         System.out.println("Dirección: " + getDireccion() + ", Comuna: " + getComuna());
+        return getRut();
     }
 
 
