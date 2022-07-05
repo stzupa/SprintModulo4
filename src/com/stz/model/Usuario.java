@@ -1,5 +1,7 @@
 package com.stz.model;
 
+import java.time.LocalDate;
+
 /**
  * com.stz.model
  *
@@ -50,7 +52,7 @@ public class Usuario implements IAsesoria{
     @Override
     public void analizarUsuario() {
 
-        System.out.println("Nombre Usuario: " + getNombre() + ", run: " + getRun());
+        System.out.println("Nombre Usuario: " + getNombre() + ", RUN: " + getRun());
 
     }
 
@@ -59,7 +61,12 @@ public class Usuario implements IAsesoria{
      * @return String
      */
     public String mostrarEdad(){
-
-        return "";
+        int edad;
+        LocalDate fechaActual= LocalDate.now();
+        int obtenerAno = fechaActual.getYear();
+        LocalDate fecha = LocalDate.parse(fechaNacimiento);
+        int obtenerAno2 = fecha.getYear();
+        edad= obtenerAno-obtenerAno2;
+        return "El usuario tiene "+edad+ " años";
     }
 }
