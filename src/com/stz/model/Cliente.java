@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author Sergio Teran on 01-07-2022
  */
-public class Cliente extends Usuario{
+public class Cliente extends Usuario implements ICliente{
 
     private int rut;
     private String nombres;
@@ -167,4 +167,10 @@ public class Cliente extends Usuario{
     }
 
 
+    @Override
+    public void listarTipo() {
+
+        System.out.println("Usuario: " + getNombre() + " Nombre completo: " + getTelefono());
+
+    }
 }

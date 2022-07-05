@@ -437,15 +437,8 @@ public class Main {
 
             switch (opcion){
                 case 1:
-                    System.out.println("Cliente");
-                    contenedor.listarUsuariosPorTipo(opcion);
-                    break;
                 case 2:
-                    System.out.println("Profesioanal");
-                    contenedor.listarUsuariosPorTipo(opcion);
-                    break;
                 case 3:
-                    System.out.println("Administrativo");
                     contenedor.listarUsuariosPorTipo(opcion);
                     break;
                 case 4:
