@@ -73,13 +73,18 @@ public class Main {
     public static void validaCliente(){
 
         boolean salir = false;
-        int rut = 0;
+        int rut;
         int sistSalud = 0;
         int edad = 0;
         String nombre, apellido, telefono, afp, direccion, comuna;
+        String fechaNac = "nacimiento";
+        String nombreUser;
         Scanner sc = new Scanner(System.in);
 
+        nombreUser = validaNombreUser();
+        fechaNac = validaFechas(fechaNac);
         rut = validaRut();
+
 
         do {
             System.out.println("Nombres Cliente:");
@@ -126,9 +131,10 @@ public class Main {
         salir = false;
 
         do {
-            System.out.println("Sistema de Salud:\n"+
-                    "1.-    Fonasa\n"+
-                    "2.-    Isapre");
+            System.out.println("""
+                    Sistema de Salud:
+                    1.-    Fonasa
+                    2.-    Isapre""");
             try {
                 sistSalud = Integer.parseInt(sc.nextLine());
                 if (sistSalud == 1 || sistSalud == 2){
@@ -176,7 +182,8 @@ public class Main {
         }while (!salir);
         salir = false;
 
-        contenedor.almacenarCliente(rut, nombre, apellido, telefono, afp, sistSalud, direccion, comuna, edad);
+
+        contenedor.almacenarCliente(nombreUser, fechaNac, rut, nombre, apellido, telefono, afp, sistSalud, direccion, comuna, edad);
 
     }
 
@@ -233,12 +240,12 @@ public class Main {
                 System.out.println("Solo texto. 5 a 20 caracteres");
             }
         }while (!salir);
-        salir = true;
+        salir = false;
 
         do {
             System.out.println("Experiencia previa:");
             exPrevia = sc.nextLine();
-            if (exPrevia.matches("^[A-Za-z\\s\\d]{10,100}$")){
+            if (exPrevia.matches("^[A-Za-z\\s\\d\\D]{10,100}$")){
                 salir = true;
             }else {
                 System.out.println("Letras y numeros, máximo 100 caracteres");
@@ -248,9 +255,7 @@ public class Main {
 
         contenedor.almacenarAdministrativo(nombreUser, fechaNacUser, runUser, area, exPrevia);
 
-
     }
-
 
     /**
      * Validar run ingresado

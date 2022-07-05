@@ -23,17 +23,17 @@ public class Contenedor {
     /**
      * permite agregar un nuevo cliente a la lista de instancias dela interface Asesoria
      */
-    public void almacenarCliente(int rut, String nombre, String apellido, String telefono, String afp, int sistSalud,
-                                 String direccion, String comuna, int edad){
+    public void almacenarCliente(String nombreUser, String fechaNac, int rut, String nombre, String apellido,
+                                 String telefono, String afp, int sistSalud, String direccion, String comuna,
+                                 int edad){
 
-        asesorias.add(new Cliente(rut,nombre,apellido,telefono,afp,sistSalud,direccion,comuna,edad));
+        asesorias.add(new Cliente(nombreUser, fechaNac, rut, rut, nombre, apellido, telefono, afp, sistSalud,
+                direccion, comuna, edad));
 
         for (IAsesoria ia: asesorias) {
             ia.analizarUsuario();
         }
     }
-
-
 
     /**
      * permite agregar un nuevo profesional a la lista de instancias de la interface Asesoria
