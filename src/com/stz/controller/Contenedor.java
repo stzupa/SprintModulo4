@@ -64,7 +64,16 @@ public class Contenedor {
      * permite eliminar un usuario desde la lista de interfaces de Asesoría acuerdo con el RUN del usuario
      */
     public void eliminarUsuario(int rut){
-
+        int i =0;
+        boolean encontrado=false;
+        do{
+            if(asesorias.get(i).analizarUsuario()==rut){
+                asesorias.remove(i);
+                encontrado=true;
+                System.out.println("Usuario eliminado con exito!\n\n");
+            }
+            i++;
+        }while (encontrado==false);
     }
 
     /**

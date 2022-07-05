@@ -47,7 +47,10 @@ public class Main {
                         validaCapacitacion();
                         break;
                     case 5:
-                        System.out.println("eliminar user");
+                        System.out.println("ingrese rut del usuario a eliminar");
+                        int rut= validaRut();
+                        contenedor.eliminarUsuario(rut);
+
                         break;
                     case 6:
                         contenedor.listarUsuarios();
@@ -151,7 +154,7 @@ public class Main {
         do {
             System.out.println("Dirección Cliente:");
             direccion = sc.nextLine();
-            if (direccion.matches("[\\D\\d]{10,70}")){
+            if (direccion.matches("[\\D\\d]{1,70}")){
                 salir = true;
             }else {
                 System.out.println("Formato incorrecto");
@@ -162,7 +165,7 @@ public class Main {
         do {
             System.out.println("Comuna Cliente:");
             comuna = sc.nextLine();
-            if (comuna.matches("[a-zA-Z]{5,40}")){
+            if (comuna.matches("[a-zA-Z]{1,50}")){
                 salir = true;
             }else {
                 System.out.println("Formato incorrecto");
@@ -180,6 +183,7 @@ public class Main {
             }catch (NumberFormatException e){
                 System.out.println("Solo números");
             }
+
         }while (!salir);
         salir = false;
 
@@ -417,5 +421,6 @@ public class Main {
         salir = false;
         contenedor.almacenarCapacitacion(id,rut,dia,hora,lugar,duracion,asistentes);
     }
+
 
 }

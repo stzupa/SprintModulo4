@@ -51,10 +51,10 @@ public class Usuario implements IAsesoria{
      * despliegue el nombre y el RUN
      */
     @Override
-    public void analizarUsuario() {
+    public int analizarUsuario() {
 
         System.out.println("Nombre Usuario: " + getNombre() + ", run: " + getRun());
-
+        return run;
     }
 
     /**

@@ -7,6 +7,6 @@ package com.stz.model;
  */
 public interface IAsesoria {
 
-    public void analizarUsuario();
+    public int analizarUsuario();
 
 }
