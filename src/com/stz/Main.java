@@ -1,10 +1,6 @@
 package com.stz;
 
 import com.stz.controller.Contenedor;
-import com.stz.model.Administrativo;
-import com.stz.model.Cliente;
-import com.stz.model.Profesional;
-import com.stz.model.Usuario;
 
 import java.util.Scanner;
 
@@ -431,20 +427,24 @@ public class Main {
 
         do {
 
-            System.out.println("Tipo de Usuario\n"+
-                    "1.-    Cliente\n" +
-                    "2.-    Profesional\n" +
-                    "3.-    Administrativo\n" +
-                    "4.-    Volver");
-
+            System.out.println("""
+                    Tipo de Usuario
+                    1.-    Cliente
+                    2.-    Profesional
+                    3.-    Administrativo
+                    4.-    Volver""");
 
             opcion = Integer.parseInt(sc.nextLine());
 
             switch (opcion){
                 case 1:
+                    contenedor.listarUsuariosPorTipo("Cliente");
+                    break;
                 case 2:
+                    contenedor.listarUsuariosPorTipo("Profesional");
+                    break;
                 case 3:
-                    contenedor.listarUsuariosPorTipo(opcion);
+                    contenedor.listarUsuariosPorTipo("Administrativo");
                     break;
                 case 4:
                     salir = true;

@@ -15,14 +15,12 @@ public class Contenedor {
     List<IAsesoria> asesorias;
     List<Capacitacion> capacitaciones;
 
-    ServicioCliente servicioCliente = new ServicioCliente();
+    String clase;
 
     public Contenedor() {
         this.asesorias = new ArrayList<>();
         this.capacitaciones = new ArrayList<>();
     }
-
-
 
     /**
      * permite agregar un nuevo cliente a la lista de instancias dela interface Asesoria
@@ -34,12 +32,6 @@ public class Contenedor {
         asesorias.add(new Cliente(nombreUser, fechaNac, rut, rut, nombre, apellido, telefono, afp, sistSalud,
                 direccion, comuna, edad));
 
-        servicioCliente.agregar(new Cliente(nombreUser, fechaNac, rut, rut, nombre, apellido, telefono, afp, sistSalud,
-                direccion, comuna, edad));
-
-        /*for (IAsesoria ia: asesorias) {
-            ia.analizarUsuario();
-        }*/
     }
 
     /**
@@ -83,10 +75,6 @@ public class Contenedor {
             i++;
         }while (encontrado==false);
 
-
-        // TODO falta desarrollo eliminar usuario
-
-
     }
 
     /**
@@ -107,24 +95,14 @@ public class Contenedor {
      * recibe un tipo de usuario (cliente, administrador o profesional), y retorna los datos respectivos según
      * el tipo de usuario
      */
-    public void listarUsuariosPorTipo(int opcion){
+    public void listarUsuariosPorTipo(String opcion){
 
-
-
-        switch (opcion){
-            case 1:
-                servicioCliente.listarTipo();
-            case 2:
-            case 3:
-
+        for (IAsesoria lista: asesorias) {
+            clase = lista.getClass().getName();
+            if (clase.contains(opcion)){
+                lista.analizarUsuario();
+            }
         }
-
-
-
-
-
-        //TODO falta desarrollo listar por tipo
-
     }
 
     /**

@@ -1,13 +1,11 @@
 package com.stz.model;
 
-import java.util.List;
-
 /**
  * com.stz.model
  *
  * @author Sergio Teran on 01-07-2022
  */
-public class Cliente extends Usuario implements ICliente{
+public class Cliente extends Usuario{
 
     private int rut;
     private String nombres;
@@ -165,13 +163,5 @@ public class Cliente extends Usuario implements ICliente{
         super.analizarUsuario();
         System.out.println("Dirección: " + getDireccion() + ", Comuna: " + getComuna());
         return getRut();
-    }
-
-
-    @Override
-    public void listarTipo() {
-
-        System.out.println("Usuario: " + getNombre() + " Nombre completo: " + getTelefono());
-
     }
 }

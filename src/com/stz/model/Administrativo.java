@@ -54,6 +54,4 @@ public class Administrativo extends Usuario{
         System.out.println("Area: " + getArea() + ", experiencia: " + getExperiencia());
         return getRun();
     }
-
-
 }
