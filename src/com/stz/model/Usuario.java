@@ -1,5 +1,8 @@
 package com.stz.model;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 /**
  * com.stz.model
  *
@@ -60,6 +63,14 @@ public class Usuario implements IAsesoria{
      */
     public String mostrarEdad(){
 
-        return "";
+        int dia = Integer.parseInt(fechaNacimiento.substring(0, 1));
+        int mes = Integer.parseInt(fechaNacimiento.substring(3, 5));
+        int agno = Integer.parseInt(fechaNacimiento.substring(6, 10));
+
+        LocalDate fn = LocalDate.of(agno, mes, dia);
+        LocalDate hoy = LocalDate.now();
+        Period periodo = Period.between(fn, hoy);
+
+        return "El usuario tiene "+ periodo.getYears()  +" años";
     }
 }

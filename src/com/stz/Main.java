@@ -1,6 +1,7 @@
 package com.stz;
 
 import com.stz.controller.Contenedor;
+import com.stz.model.Usuario;
 
 import java.util.Scanner;
 
