@@ -20,3 +20,4 @@ y las siguietnes relacionadas con las activiades de la empresa
 
 Repositorios:
 Sergio Terán  https://github.com/stzupa/SprintModulo4
+Fabiola Díaz https://github.com/fabyDiaz/SprintModulo4.git
