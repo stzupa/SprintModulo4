@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * com.stz.controller
- * version 1.0
+ * @version 1.0
  * @author Sergio Teran, Fabiola Díaz on 05-07-2022
  */
 public class Contenedor {

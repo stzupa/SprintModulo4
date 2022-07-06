@@ -1,7 +1,7 @@
 package com.stz;
 /**
  * com.stz.model
- * version 1.0
+ * @version 1.0
  * @author Sergio Teran, Fabiola Díaz on 05-07-2022
  */
 import com.stz.controller.Contenedor;
@@ -85,7 +85,7 @@ public class Main {
      * valida los datos del cliente
      */
     public static void validaCliente(){
-
+       
         boolean salir = false;
         int rut;
         int sistSalud = 0;
@@ -457,6 +457,9 @@ public class Main {
         contenedor.almacenarCapacitacion(id,rut,dia,hora,lugar,duracion,asistentes);
     }
 
+    /**
+     * Valida usuario por tipo
+     */
 
     public static void usuarioPorTipo(){
 
