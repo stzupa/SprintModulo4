@@ -7,6 +7,7 @@ La empresa no posee un sistema de información que le permita administrar toda l
 Existen problemas con la planificación de las visitas, generalmente los profesionales están en terreno por lo que no están disponibles para informarles sus actividades futuras. No existe registro del profesional que ha estado con mayor actividad ni se sabe dónde está cadauno.
 
 Para comenzar, se debe tener un control de los usuarios y las actividades que se realizan. Es por eso que se definiron las siguientes entidades relacionadas con los usarios: 
+
 -Usuario
 - Cliente
 - Profesiona
