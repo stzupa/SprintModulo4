@@ -2,7 +2,11 @@ package com.stz;
 /**
  * com.stz.model
  * @version 1.0
- * @author Sergio Teran, Fabiola Díaz on 05-07-2022
+ * @author Sergio Teran
+ * @author Damián Martínez
+ * @author Fabiola Diaz
+ * @author Fabian Cornejo
+ * @author German Espinoza  on 05-07-2022
  */
 import com.stz.controller.Contenedor;
 
@@ -85,7 +89,7 @@ public class Main {
      * valida los datos del cliente
      */
     public static void validaCliente(){
-       
+
         boolean salir = false;
         int rut;
         int sistSalud = 0;
