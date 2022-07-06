@@ -17,3 +17,6 @@ y las siguietnes relacionadas con las activiades de la empresa
 - Accidente
 - Visita a Terreno
 - revisión 
+
+Repositorios:
+Sergio Terán  https://github.com/stzupa/SprintModulo4
