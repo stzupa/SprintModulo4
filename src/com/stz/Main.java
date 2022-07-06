@@ -1,7 +1,7 @@
 package com.stz;
 /**
  * com.stz.model
- *
+ * version 1.0
  * @author Sergio Teran, Fabiola Díaz on 05-07-2022
  */
 import com.stz.controller.Contenedor;
@@ -80,6 +80,10 @@ public class Main {
         }while (!salir);
     }
 
+
+    /**
+     * valida los datos del cliente
+     */
     public static void validaCliente(){
 
         boolean salir = false;
@@ -95,7 +99,7 @@ public class Main {
         fechaNac = validaFechas(fechaNac);
         rut = validaRut();
 
-
+        //valida que el nombre no tenga mas de 30 caracteres
         do {
             System.out.println("Nombres Cliente:");
             nombre = sc.nextLine();
@@ -107,6 +111,7 @@ public class Main {
         }while (!salir);
         salir = false;
 
+        //Valida que el apellido no tengo mas de 30 caracteres
         do {
             System.out.println("Apellidos Cliente:");
             apellido = sc.nextLine();
@@ -117,7 +122,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
+        //Valida que el telefono del cliente sea ingresda con el formato +56xxxxxxxxx
         do {
             System.out.println("Teléfono Cliente");
             telefono = sc.nextLine();
@@ -128,7 +133,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
+        //Valida que la afp sea ingresa correctamente
         do {
             System.out.println("AFP Cliente:");
             afp = sc.nextLine();
@@ -139,7 +144,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
+        //Valida que se ingrese 1 o 2 en el sistema de salud
         do {
             System.out.println("""
                     Sistema de Salud:
@@ -155,8 +160,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
-
+        //Valida que no se ingresen más de 70 carateres para la direccion
         do {
             System.out.println("Dirección Cliente:");
             direccion = sc.nextLine();
@@ -167,7 +171,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
+        //Valida que se ingresen maximo 50 caracteres en comuna
         do {
             System.out.println("Comuna Cliente:");
             comuna = sc.nextLine();
@@ -178,7 +182,7 @@ public class Main {
             }
         }while (!salir);
         salir = false;
-
+        //Valida que la edad del cliente se encuentre entree 0 y 150
         do {
             System.out.println("Edad Cliente:");
             try {
@@ -199,7 +203,7 @@ public class Main {
     }
 
     /**
-     * Valida datos del prosefional
+     * Valida datos del profesional
      */
     public static void validaProfesional(){
 
@@ -230,6 +234,9 @@ public class Main {
 
     }
 
+    /**
+     * Valida datos del Administrativo
+     */
     public static void validaAdministrativo(){
 
         String area;
@@ -269,7 +276,7 @@ public class Main {
     }
 
     /**
-     * Validar run ingresado
+     * Valida que el rut sea ingresado correctamente
      * @return rut
      */
     public static int validaRut(){
@@ -300,7 +307,7 @@ public class Main {
     }
 
     /**
-     * Valida fecha ingresada
+     * Valida que la fecha sea ingresado correctamente
      * @return fecha
      */
     public static String validaFechas(String cadena){
@@ -323,7 +330,7 @@ public class Main {
     }
 
     /**
-     * Valida el nombre del usuario
+     * Valida que el nombre de usuario sea ingresado correctamente
      * @return String usuario
      */
     public static String validaNombreUser(){
@@ -343,7 +350,9 @@ public class Main {
 
         return nombre;
     }
-
+    /**
+     * Valida que el identificador sea ingresado correctamente
+     */
     public static int validarID(){
         int id=0;
         do {
@@ -362,6 +371,9 @@ public class Main {
         return id;
     }
 
+    /**
+     * Valida que la hora sea ingresasa correctamente
+     */
     public static String validarHora(){
         String hora;
         do {

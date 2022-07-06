@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * com.stz.controller
- *
+ * version 1.0
  * @author Sergio Teran, Fabiola Díaz on 05-07-2022
  */
 public class Contenedor {
@@ -64,16 +64,20 @@ public class Contenedor {
      */
     public void eliminarUsuario(int rut){
 
-        int i =0;
+        int i = 0;
         boolean encontrado=false;
-        do{
+
+        for (i=0; i<asesorias.size()&&encontrado==false; i++){
             if(asesorias.get(i).analizarUsuario()==rut){
+                System.out.println("Usuario eliminado con exito!\n\n");
                 asesorias.remove(i);
                 encontrado=true;
-                System.out.println("Usuario eliminado con exito!\n\n");
             }
-            i++;
-        }while (encontrado==false);
+        }
+        if (encontrado==false){
+            System.out.println("Usuario no encontrado");
+        }
+
 
     }
 
@@ -83,10 +87,14 @@ public class Contenedor {
      */
     public void listarUsuarios(){
 
-        for (IAsesoria ia: asesorias) {
+        if(asesorias == null || asesorias.isEmpty()){
+            System.out.println("La lista está vacia");
+        }else{
+            for (IAsesoria ia: asesorias) {
 
-            ia.analizarUsuario();
+                ia.analizarUsuario();
 
+            }
         }
 
     }
@@ -110,10 +118,16 @@ public class Contenedor {
      * cliente al que está asociada dicha capacitación
      */
     public void listarCapacitaciones(){
-        for (Capacitacion cap: capacitaciones) {
 
-            cap.mostrarDetalle();
+        if(capacitaciones == null || capacitaciones.isEmpty()){
+            System.out.println("La lista está vacía");
+        }else {
+            for (Capacitacion cap: capacitaciones) {
 
+                cap.mostrarDetalle();
+
+            }
         }
+
     }
 }
