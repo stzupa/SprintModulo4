@@ -10,7 +10,7 @@ Para comenzar, se debe tener un control de los usuarios y las actividades que se
 
 -Usuario
 - Cliente
-- Profesiona
+- Profesional
 - Administrtivo
 
 y las siguietnes relacionadas con las activiades de la empresa 
